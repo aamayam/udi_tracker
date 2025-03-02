@@ -1,3 +1,5 @@
+import os
+from dotenv import load_dotenv
 import argparse
 from tracker import UDITracker
 from datetime import datetime as dt
@@ -5,11 +7,16 @@ from datetime import datetime as dt
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--fecha','-f',type=str,help="fecha para obtener el valor de la UDI")
+
+    load_dotenv()
     
     try:
         args = parser.parse_args()
 
-        token = 'c9be2c44c1c6d8c9274235897f3989a390b8fdacc4f891656ca59f9e0622cf31'
+        token = os.environ.get('BANXICO_TOKEN')
+        if not token:
+            print("Error: Token no encontrado en variables de entorno o archivo .env")
+            exit(1)
         tracker = UDITracker(token)
 
         if args.fecha:
