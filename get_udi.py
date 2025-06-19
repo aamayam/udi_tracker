@@ -30,9 +30,11 @@ def main():
 
         valor_udi = float(tracker.get_udi_series(date).dato[0])
 
-        print("El valor de la UDI en la fecha " + date + " es: " + str(valor_udi))
+        print("El valor de la UDI en la fecha \033[32m" + date + "\033[0m es: \033[92m" + str(valor_udi) + "\033[0m")
         print("\nPara una fecha particular usar: \033[4m get_udi.py -f YYYY-MM-DD \033[0m")
         print("Para conversión de un valor de udis a pesos usar:\033[4m udi2pesos.py monto [-f] [YYYY-MM-DD] \033[0m")
+        print("O, si se ha agregado al PATH, usar:\t\033[4m get-udi [-f] [YYYY-MM-DD] \033[0m y,")
+        print("\t\t\t\t\t\033[4m udi2mxn monto [-f] [YYYY-MM-DD] \033[0m")
         
         return 0
     except argparse.ArgumentTypeError:

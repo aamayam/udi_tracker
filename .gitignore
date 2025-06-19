@@ -1,4 +1,23 @@
-*.ipynb
-__pycache__
-*.pyc
+# Archivos de entorno
 .env
+
+# Poetry
+poetry.lock  
+.python-version
+# Entornos virtuales 
+venv/
+env/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.coverage
+.pytest_cache/
+
+# macOS
+.DS_Store

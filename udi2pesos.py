@@ -34,7 +34,7 @@ def main():
         print("El valor de la UDI el dia " + date + " es: " + str(valor_udi))
 
         monto_a_pagar = valor_udi * args.monto
-        print("El total a pagar por " + str(args.monto) + " UDI's es de: $" + str(round(monto_a_pagar,ndigits=2)))
+        print("El total a pagar por " + str(args.monto) + " UDI's es de: \033[92m$" + str(round(monto_a_pagar,ndigits=2)) + "\033[0m")
         
         return 0
     except argparse.ArgumentTypeError:
